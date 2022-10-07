@@ -22,8 +22,8 @@ yarn tsc -w
 Выполняем js файл проекта в режиме отладки в режиме автоперезапуска после изменений
 yarn nodemon --inspect dist/index.js
 
-Добавляем Jest и определения:
-yarn add --dev jest ts-jest @types/jest @types/supertest
+Добавляем Jest, supertest и определения:
+yarn add --dev jest ts-jest @types/jest supertest @types/supertest
 
 Инициализируем конфигурацию jest:
 yarn ts-jest config:init

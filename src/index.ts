@@ -44,6 +44,18 @@ describe("First test", () => {
     })
 })
 
+для автоматического поднятия сервера и его тестирования в файле test добавляем:
+import request from "supertest";
+import {app} from "./server";
+
+describe("Test server", () => {
+    it("returned 200", async () => {
+        await request(app)
+            .get("/")
+            .expect(200)
+    })
+})
+
 */
 
 import {multi, sqrt} from "./func1";

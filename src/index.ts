@@ -56,6 +56,13 @@ describe("Test server", () => {
     })
 })
 
+Чтобы исключить тест из компиляциию вместо "./ __tests__" свой маршрут
+"exclude": ["./ __tests__"]
+
+Для подключения .env (расположен в корне) добавить:
+yarn add dotenv (в командной)
+import 'dotenv/config'; (в файле проекта)
+
 */
 
 import {multi, sqrt} from "./func1";

@@ -24,7 +24,7 @@ yarn tsc -w
 yarn nodemon --inspect dist/index.js
 
 Добавляем Jest и определения:
-yarn add --dev jest ts-jest @types/jest @types/supertest
+yarn add --dev jest ts-jest @types/jest supertest @types/supertest
 
 Инициализируем конфигурацию jest:
 yarn ts-jest config:init
@@ -36,7 +36,7 @@ yarn ts-jest config:init
     "test": "jest --watch"
   },
 
-Создаем файл типа index.test.ts и  тестируем в нем импортируя переменные из файла проекта:
+Создаем файл типа index.test.ts (при необходимости кладем его в папку: __test__ ) и  тестируем в нем импортируя переменные из файла проекта:
 
 describe("First test", () => {
     it("Should return correct result", () => {
@@ -56,12 +56,13 @@ describe("Test server", () => {
     })
 })
 
-Чтобы исключить тест из компиляциию вместо "./ __tests__" свой маршрут
-"exclude": ["./ __tests__"]
+Чтобы исключить тест из компиляции добавьте в tsconfig.json вне раздела: "compilerOptions": {...}
+"exclude": ["./__test__"]
+ (или свой маршрут)
 
 Для подключения .env (расположен в корне) добавить:
 yarn add dotenv (в командной)
-import 'dotenv/config'; (в файле проекта)
+import 'dotenv/config'; (в файлsе проекта)
 
 */
 
